@@ -1,0 +1,23 @@
+:root {
+	--color-white: #FFFAEF;
+	--color-sand: #E8D9B6;
+	--color-brown: #9B8C6A;
+	--color-dark-blue: #5B709B;
+	--color-light-blue: #B6C6E8;
+}
+
+* {
+	margin: 0;
+}
+
+main {
+	padding-top: 100px;
+}
+
+@media (min-width: 768px) {
+	/* styles tablette */
+}
+
+@media (min-width: 1024px) {
+	/* styles desktop */
+}

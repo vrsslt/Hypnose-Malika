@@ -1,0 +1,84 @@
+<header>
+    <div class="header-inner">
+        
+        <img src="/public/lotus-icon.png" alt="image de lotus sur l'eau">
+    <h1>
+        Hypnose Malika
+    </h1>
+    <button id="burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    </button>
+    </div>
+  </header>
+
+  <style>
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-color: var(--color-dark-blue);
+        color: var(--color-white);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-inner {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    header img {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+    }
+
+    /* hamburger menu */
+
+    #burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    #burger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: var(--color-white);
+        border-radius: 2px;
+    }
+
+  </style>
+  
+
+  <script>
+    const burger = document.getElementById('burger')
+
+    burger?.addEventListener('click', () => {
+        console.log("Burger clicked !")
+    })
+  </script>
