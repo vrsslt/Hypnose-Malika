@@ -11,8 +11,11 @@
 
 }
 
+
+
 main {
 	padding-top: 100px;
+	background-color: var(--color-white);
 }
 
 @media (min-width: 768px) {
