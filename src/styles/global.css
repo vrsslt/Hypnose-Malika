@@ -1,17 +1,14 @@
 :root {
-	--color-white: #FFFAEF;
-	--color-sand: #E8D9B6;
-	--color-brown: #9B8C6A;
-	--color-dark-blue: #5B709B;
-	--color-light-blue: #B6C6E8;
+	--color-white: #fffaef;
+	--color-sand: #e8d9b6;
+	--color-brown: #9b8c6a;
+	--color-dark-blue: #5b709b;
+	--color-light-blue: #b6c6e8;
 }
 
 * {
 	margin: 0;
-
 }
-
-
 
 main {
 	padding-top: 100px;
