@@ -1,13 +1,13 @@
 ---
 ---
 
-<section class="intervention">
+<section id="intervention" class="intervention">
     <h3>
         Mes domaines d'intervention
     </h3>
     <img src="/public/meditation.png" alt="illustration d'une femme méditant en pleine nature">
     <ul>
-        <li>Régler des évènments passés non digérés</li>
+        <li>Régler des évènements passés non digérés</li>
         <li>Dialoguer avec son enfant intérieur</li>
         <li>Echanger avec une entité, un blocage, une douleur, une âme errante, une émotion</li>
         <li>Recevoir un soin énergétique</li>
@@ -22,6 +22,13 @@
 <style>
     .intervention {
         background-color: var(--color-white);
+        scroll-margin-top: 100px;
+        padding: 3rem 1rem;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
     .intervention h3 {
         text-align: center;
@@ -30,17 +37,20 @@
     }
 
     .intervention img {
+        display: block;
+        margin: 1rem auto;
+        max-width: 400px;
+        border-radius: 1rem;
         height: auto;
         width: 100%;
     }
 
     .intervention ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.5rem;
-        margin: 1rem;
-        padding: 0;
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+       gap: 1rem;
+       margin: 1rem;
+       padding: 0;
     }
 
     .intervention li {
@@ -49,7 +59,14 @@
         font-weight: bold;
         list-style: none;
         text-align: center;
-        padding: 0.5rem;
-        border-radius: 10px;
+        padding: 0.75rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .intervention li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 12px rgba(0,0,0,0.15);
     }
 </style>
