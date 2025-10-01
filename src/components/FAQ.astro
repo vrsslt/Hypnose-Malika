@@ -2,8 +2,8 @@
 ---
 <section id="FAQ" class="FAQ">
     <h3>Questions fréquentes</h3>
-    <ol>
-        <li>
+    <ul>
+        <li> 
             <h4>Est-ce que tout le monde est réceptif à l'hypnose ?</h4>
             <p>Oui, tout le monde peut entrer en état d’hypnose. C’est un état naturel que nous expérimentons au quotidien (lorsqu'on est absorbé dans un livre ou "dans la lune"). La séance s’adapte à votre rythme et à votre sensibilité.</p>
         </li>
@@ -27,13 +27,14 @@
             <h4>Est-ce remboursé par la sécurité sociale ?</h4>
             <p> L’hypnose thérapeutique n’est pas remboursée par la Sécurité sociale, mais certaines mutuelles proposent un remboursement partiel selon les forfaits bien-être. Renseignez-vous auprès de la vôtre.</p>
         </li>
-    </ol>
+    </ul>
 </section>
 
 <style>
 
     .FAQ {
         scroll-margin-top: 100px;
+        padding-bottom: 1.5rem;
     }
     h3 {
         font-weight: bold;
@@ -42,24 +43,40 @@
         margin: 1rem;
     }
 
-    ol {
+    .FAQ ul {
         width: 80%;
+        list-style: none;
+        padding-left: 32px;
     }
     
-    li {
+    .FAQ li {
+        box-sizing: border-box;
+        position: relative;
         color: var(--color-dark-blue);
+        padding-left: 2rem;
+        margin-bottom: 1.5rem;
     }
 
-    li h4 {
+    .FAQ li::before {
+        content: "";
+        position: absolute;
+        left: -0.8rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: url("/lotus-list-style.svg");
+        background-size: contain;
+    }
+
+    .FAQ li h4 {
         color: var(--color-dark-blue);
         font-size: small;
-        margin: 0.5rem;
-        font-style: italic;
+        margin-bottom: 0.5rem;
     }
 
-    li p {
+    .FAQ li p {
         color: var(--color-brown);
         font-size: smaller;
+        font-style: italic;
     }
     
 </style>
