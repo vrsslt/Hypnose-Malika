@@ -1,0 +1,81 @@
+---
+---
+<section id="seance" class="seance">
+    <h3>Déroulement d’une séance</h3>
+    <div class="seance-cards">
+      <div class="card">
+        <span class="icon">⏳</span>
+        <h4>Durée</h4>
+        <p>2 à 4 heures</p>
+      </div>
+      <div class="card">
+        <span class="icon">💶</span>
+        <h4>Tarif</h4>
+        <p>160 €</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏡</span>
+        <h4>Lieu</h4>
+        <p>À domicile</p>
+      </div>
+      <div class="card">
+        <span class="icon">🌙</span>
+        <h4>Après la séance</h4>
+        <p>Ne rien prévoir pour prolonger l’état de détente</p>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .seance {
+      scroll-margin-top: 100px;
+      padding: 2rem 0;
+      text-align: center;
+    }
+  
+    .seance h3 {
+      font-weight: bold;
+      color: var(--color-light-blue);
+      margin-bottom: 2rem;
+    }
+  
+    .seance-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .card {
+      background: var(--color-sand);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+  
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  
+    .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--color-dark-blue);
+    }
+  
+    .card h4 {
+      color: var(--color-dark-blue);
+      margin: 0.5rem 0;
+    }
+  
+    .card p {
+      font-size: smaller;
+      color: var(--color-brown);
+      margin: 0;
+    }
+  </style>
+  
