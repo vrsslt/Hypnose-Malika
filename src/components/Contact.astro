@@ -5,6 +5,7 @@
         Envie d'échanger ?
     </h3>
     <p>Je suis à votre écoute. N’hésitez pas à me laisser un message, je vous répondrai rapidement.</p>
+    <div class="flex-container">
     <div class="form-container">
 
         <form action="#" method="POST">
@@ -20,6 +21,7 @@
         <p>Ou contactez moi directement au : </p>
         <a class="phone-number" href="tel:+33686065341">06 86 06 53 41</a>
     </div>
+</div>
 </section>
 
 <style>
@@ -115,4 +117,34 @@
         text-decoration: none;
     }
 
+@media (min-width: 1024px) {
+
+    .contact p {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .flex-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: 45% 10% 45%;
+        gap: 2rem;
+    }
+
+    .line {
+        height: 90%;
+        width: 2px;
+    }
+
+    .phone-container {
+        position: absolute;
+        right: 12.5%;
+        top: 12.5%;
+    }
+
+    .phone-container img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
+    }
+}
 </style>
