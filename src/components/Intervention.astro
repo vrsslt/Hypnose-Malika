@@ -5,6 +5,7 @@
     <h3>
         Mes domaines d'intervention
     </h3>
+    <div class="content-container">
     <img src="/meditation.webp" alt="illustration d'une femme méditant en pleine nature">
     <ul>
         <li>Régler des évènements passés non digérés</li>
@@ -16,7 +17,7 @@
         <li>Se charger dans des endroits ressources</li>
         <li>Connaître ses vies antérieures</li>
     </ul>
-
+</div>
 </section>
 
 <style>
@@ -70,4 +71,17 @@
         transform: translateY(-3px);
         box-shadow: 0 8px 12px rgba(0,0,0,0.15);
     }
+
+
+@media (min-width: 1024px) {
+    .content-container {
+        display: flex;
+    }
+
+    .intervention li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 </style>
