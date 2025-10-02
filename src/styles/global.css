@@ -31,13 +31,17 @@ main {
 
 @media (min-width: 768px) {
 	/* styles tablette */
-	html {
-		width: 50%;
-		margin: 0 auto;
-		background-color: var(--color-white);
-	}
 }
 
 @media (min-width: 1024px) {
 	/* styles desktop */
+	html {
+		width: 70%;
+		margin: 0 auto;
+		background-color: var(--color-white);
+	}
+
+	main {
+		padding-top: 300px;
+	}
 }
