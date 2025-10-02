@@ -3,5 +3,113 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-    
+
+<section id="mentions" class="mentions">
+  <h3>Mentions légales</h3>
+
+  <div class="mentions-content">
+    <section class="mentions-block">
+      <h4>Éditeur du site</h4>
+      <p>
+        <strong>Malika Amari</strong><br>
+        Praticienne en hypnose quantique spirituelle et énergétique<br>
+        [Adresse complète à renseigner]<br>
+        Téléphone : [numéro à renseigner]<br>
+        Email : <a href="mailto:contact@malika.exemple">contact@malika.exemple</a><br>
+        Numéro SIRET : [SIRET à renseigner]
+      </p>
+    </section>
+
+    <section class="mentions-block">
+      <h4>Directrice de la publication</h4>
+      <p>
+        Madame <strong>Malika Amari</strong>
+      </p>
+    </section>
+
+    <section class="mentions-block">
+      <h4>Hébergement</h4>
+      <p>
+        Ce site est hébergé par :<br>
+        <strong>Vercel Inc.</strong><br>
+        340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis<br>
+        Site web : <a href="https://vercel.com" target="_blank">vercel.com</a>
+      </p>
+    </section>
+
+    <section class="mentions-block">
+      <h4>Propriété intellectuelle</h4>
+      <p>
+        L’ensemble du contenu de ce site (textes, images, illustrations, logos, etc.) est protégé par le droit de la propriété intellectuelle. 
+        Toute reproduction, distribution, modification ou adaptation, même partielle, est strictement interdite sans autorisation préalable.
+      </p>
+    </section>
+
+    <section class="mentions-block">
+      <h4>Responsabilité</h4>
+      <p>
+        Les informations fournies sur ce site le sont à titre indicatif. 
+        Malika Amari s’efforce d’assurer leur exactitude mais ne saurait être tenue responsable des éventuelles erreurs ou omissions. 
+        L’utilisation des informations disponibles sur le site se fait sous la seule responsabilité de l’utilisateur.
+      </p>
+    </section>
+
+    <p class="note">
+      Dernière mise à jour : <strong>2 octobre 2025</strong>.
+    </p>
+  </div>
+</section>
+
+<style>
+  .mentions {
+    scroll-margin-top: 100px;
+    padding: 2rem 1rem;
+    background: var(--color-white);
+    color: var(--color-brown);
+  }
+
+  .mentions h3 {
+    text-align: center;
+    color: var(--color-light-blue);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .mentions-content {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .mentions-block {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .mentions-block h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--color-dark-blue);
+    font-size: 1rem;
+  }
+
+  .mentions-block p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    color: var(--color-brown);
+  }
+
+  .mentions a {
+    color: var(--color-dark-blue);
+    text-decoration: underline;
+  }
+
+  .mentions .note {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: var(--color-dark-blue);
+    font-size: 0.9rem;
+  }
+</style>
+
 </Layout>
