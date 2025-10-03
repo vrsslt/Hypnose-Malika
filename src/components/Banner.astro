@@ -85,8 +85,35 @@
 </style>
 
 <script>
-    const btn = document.getElementById('scroll-contact');
-    btn?.addEventListener('click', ()=> {
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'});
+    // Gestion des liens internes (smooth scroll + redirection si autre page)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href'); // ex: "#contact"
+        if (!targetId || targetId === "#") return;
+  
+        e.preventDefault();
+  
+        if (window.location.pathname !== "/") {
+          // Si on n’est pas sur la home → on redirige
+          window.location.href = `/${targetId}`;
+        } else {
+          // Si on est sur la home → scroll smooth
+          const target = document.querySelector(targetId);
+          target?.scrollIntoView({ behavior: "smooth" });
+        }
+      });
     });
-</script>
+  
+    // Gestion spécifique du bouton de la bannière
+    const scrollBtn = document.getElementById('scroll-contact');
+    scrollBtn?.addEventListener('click', () => {
+      const targetId = "#contact";
+      if (window.location.pathname !== "/") {
+        window.location.href = `/${targetId}`;
+      } else {
+        const target = document.querySelector(targetId);
+        target?.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  </script>
+  
