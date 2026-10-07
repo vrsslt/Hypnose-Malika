@@ -1,5 +1,5 @@
 {
-	"name": "subsequent-saturn",
+	"name": "hypnose-malika",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
@@ -14,11 +14,15 @@
 		"fix": "npm run format && npm run lint"
 	},
 	"dependencies": {
+		"@astrojs/sitemap": "^3.7.4",
 		"@fontsource-variable/quicksand": "^5.3.0",
 		"@fontsource/amatic-sc": "^5.3.0",
-		"astro": "^5.14.1"
+		"astro": "^7.3.6"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.4"
+	},
+	"engines": {
+		"node": ">=22.12.0"
 	}
 }

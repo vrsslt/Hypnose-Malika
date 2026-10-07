@@ -1,0 +1,49 @@
+---
+import Lotus from "../components/Lotus.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Page introuvable" description="Cette page n'existe pas ou a été déplacée." noindex>
+<section class="section not-found">
+  <Lotus size={56} />
+  <h1>Page introuvable</h1>
+  <p>Cette page n'existe pas ou a été déplacée.</p>
+  <a class="back" href="/">Retour à l'accueil</a>
+</section>
+</Layout>
+
+<style>
+  .not-found {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    color: var(--color-primary);
+  }
+
+  .not-found h1 {
+    font-size: clamp(2.6rem, 2rem + 3vw, 3.75rem);
+  }
+
+  .not-found p {
+    color: var(--color-text);
+  }
+
+  .back {
+    margin-top: 1rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.4s;
+  }
+
+  .back:hover {
+    background-color: var(--color-bg-alt);
+  }
+</style>

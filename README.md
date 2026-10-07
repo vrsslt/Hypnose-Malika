@@ -1,43 +1,30 @@
-# Astro Starter Kit: Minimal
+# Hypnose Malika
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Site vitrine de Malika Amari, praticienne en hypnose quantique, spirituelle et énergétique.
+Site statique [Astro](https://astro.build), déployé sur Vercel à chaque push sur `main`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commandes
 
-## 🚀 Project Structure
+| Commande          | Action                                        |
+| :---------------- | :-------------------------------------------- |
+| `npm install`     | Installe les dépendances (Node 22.12 minimum) |
+| `npm run dev`     | Serveur local sur `localhost:4321`            |
+| `npm run build`   | Build de production dans `./dist/`            |
+| `npm run preview` | Aperçu local du build                         |
+| `npm run check`   | Lint et format (Biome)                        |
+| `npm run fix`     | Corrige le format et le lint                  |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Structure
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- `src/pages/` : l'accueil, les deux pages légales, la page 404 et `robots.txt`
+- `src/components/` : une section de l'accueil par composant, plus le header et le footer
+- `src/layouts/Layout.astro` : balises `<head>` (titre, description, partage) communes aux pages
+- `src/styles/global.css` : palette, polices et styles communs
+- `src/assets/` : images optimisées au build ; `public/` : fichiers servis tels quels
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## À savoir
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Couleurs et polices** : tout se règle dans les variables en tête de `src/styles/global.css`.
+- **Nom de domaine** : l'adresse du site est déclarée dans `astro.config.mjs` (`site`). Elle sert au
+  sitemap, aux liens canoniques et aux images de partage, donc à mettre à jour si le domaine change.
+- **Formulaire de contact** : envoyé via Formspree, l'identifiant est dans `src/components/Contact.astro`.
