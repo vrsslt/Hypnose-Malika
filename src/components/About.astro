@@ -1,100 +1,94 @@
 ---
+import Lotus from "./Lotus.astro";
 ---
 
-<section id="about" class="about">
-    <h3>Mon chemin de vie</h3>
-  
-    <p>
-      <strong>Malika Amari</strong>, passionnée par 
-      <span class="highlight">l’hypnose Quantique Spirituelle et Énergétique (QSE)</span>, 
-      la <span class="highlight">PNL</span>, la <span class="highlight">naturopathie</span> 
-      et la <span class="highlight">réflexologie plantaire</span>.  
-      J’accompagne chaque personne avec bienveillance et respect de son rythme.  
+<section id="about" class="about section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <h2>Mon chemin de vie</h2>
+      <Lotus />
+    </div>
+
+    <p class="intro" data-reveal>
+      <strong>Malika Amari</strong>, passionnée par
+      <span class="highlight">l’hypnose Quantique Spirituelle et Énergétique (QSE)</span>,
+      la <span class="highlight">PNL</span>, la <span class="highlight">naturopathie</span>
+      et la <span class="highlight">réflexologie plantaire</span>.
+      J’accompagne chaque personne avec bienveillance et respect de son rythme.
       Je propose des séances d’hypnose à domicile, dans un cadre apaisant et personnalisé.
     </p>
-  
-    <span class="separate"></span>
-  
-    <h4>🌿 Une approche en profondeur</h4>
-    <p>
-      Cette méthode permet d’accéder à <span class="highlight">l’inconscient en profondeur</span> afin de comprendre et libérer les racines d’une problématique.  
-      Contrairement aux méthodes qui ne traitent que les symptômes, l’Hypnose QSE explore les couches les plus profondes pour aller à l’origine du blocage.
-    </p>
-    <blockquote>
-      « L’hypnose n’efface pas les symptômes, elle remonte à la source pour libérer durablement. »
-    </blockquote>
-  
-    <span class="separate"></span>
-  
-    <h4>🌸 Une libération intérieure</h4>
-    <p>
-      Elle aide à dépasser des traumatismes, phobies, maladies ou schémas répétitifs – qu’ils soient issus de cette vie, de vies antérieures ou d’héritages transgénérationnels.  
-      <span class="highlight">Votre inconscient</span> connaît vos besoins mieux que quiconque et vous guide naturellement vers l’expérience ou le souvenir juste pour vous.
-    </p>
-  
-    <blockquote>
-      « Vous détenez vous-même la clé de votre libération. »
-    </blockquote>
-  </section>
-  
-  <style>
-    .about {
-      scroll-margin-top: 100px;
-      padding: 2rem 0;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 1rem 0 1rem;
-    }
-  
-    .about h3 {
-      color: var(--color-light-blue);
-      margin-bottom: 1.5rem;
-      letter-spacing: 1px;
-    }
-  
-    .about h4 {
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: var(--color-dark-blue);
-    }
-  
-    .about p {
-      color: var(--color-brown);
-      margin: 1rem 0;
-      line-height: 1.6;
-    }
-  
-    .highlight {
-      color: var(--color-dark-blue);
-      font-style: italic;
-      font-weight: 500;
-    }
-  
-    .separate {
-      display: block;
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 1.5rem 0;
-      opacity: 0.7;
-    }
-  
-    blockquote {
-      font-style: italic;
-      color: var(--color-dark-blue);
-      border-left: 3px solid var(--color-light-blue);
-      margin: 1.5rem auto;
-      padding-left: 1rem;
-      max-width: 600px;
-      text-align: left;
-    }
 
-    @media (min-width: 1024px)  {
-      .about {
-        scroll-margin-top: 200px;
-        margin: 0 auto;
-      }
+    <div class="pillars">
+      <article class="pillar" data-reveal>
+        <h3>Une approche en profondeur</h3>
+        <p>
+          Cette méthode permet d’accéder à <span class="highlight">l’inconscient en profondeur</span> afin de comprendre et libérer les racines d’une problématique.
+          Contrairement aux méthodes qui ne traitent que les symptômes, l’Hypnose QSE explore les couches les plus profondes pour aller à l’origine du blocage.
+        </p>
+        <blockquote>
+          « L’hypnose n’efface pas les symptômes, elle remonte à la source pour libérer durablement. »
+        </blockquote>
+      </article>
+
+      <article class="pillar" data-reveal style="--i: 2">
+        <h3>Une libération intérieure</h3>
+        <p>
+          Elle aide à dépasser des traumatismes, phobies, maladies ou schémas répétitifs – qu’ils soient issus de cette vie, de vies antérieures ou d’héritages transgénérationnels.
+          <span class="highlight">Votre inconscient</span> connaît vos besoins mieux que quiconque et vous guide naturellement vers l’expérience ou le souvenir juste pour vous.
+        </p>
+        <blockquote>
+          « Vous détenez vous-même la clé de votre libération. »
+        </blockquote>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-head {
+    color: var(--color-dark-blue);
+  }
+
+  .intro {
+    max-width: 44rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.15rem;
+  }
+
+  .highlight {
+    color: var(--color-dark-blue);
+    font-weight: 600;
+  }
+
+  .pillars {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: clamp(2rem, 1rem + 3vw, 3.5rem);
+  }
+
+  .pillar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+    background-color: var(--color-sand-light);
+    border-radius: var(--radius);
+  }
+
+  blockquote {
+    margin-top: auto;
+    padding-left: 1rem;
+    border-left: 3px solid var(--color-light-blue);
+    font-family: var(--font-hand);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--color-dark-blue);
+  }
+
+  @media (min-width: 800px) {
+    .pillars {
+      grid-template-columns: 1fr 1fr;
     }
-  </style>
-  
+  }
+</style>

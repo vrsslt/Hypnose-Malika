@@ -1,83 +1,123 @@
 ---
+import Lotus from "./Lotus.astro";
+
+const questions = [
+	{
+		question: "Est-ce que tout le monde est réceptif à l'hypnose ?",
+		reponse:
+			'Oui, tout le monde peut entrer en état d’hypnose. C’est un état naturel que nous expérimentons au quotidien (lorsqu\'on est absorbé dans un livre ou "dans la lune"). La séance s’adapte à votre rythme et à votre sensibilité.',
+	},
+	{
+		question: "Vais-je perdre le contrôle pendant la séance ?",
+		reponse:
+			"Non, l’hypnose thérapeutique n’a rien à voir avec l’hypnose de spectacle. Vous restez conscient(e) tout au long de la séance. C’est un travail collaboratif : je vous guide, mais vous êtes toujours libre.",
+	},
+	{
+		question: "Combien de séances faut-il pour obtenir des résultats ?",
+		reponse:
+			"Cela dépend de la personne et de la problématique. Parfois une seule séance peut suffire, d’autres fois quelques séances sont nécessaires. Nous adaptons ensemble selon vos besoins.",
+	},
+	{
+		question: "L'hypnose peut-elle aider contre l'anxiété ou les phobies ?",
+		reponse:
+			"Absolument. L’hypnose permet d’apaiser l’anxiété, de gérer les crises de stress, ou de désactiver des peurs irrationnelles comme les phobies (avion, araignées, etc.).",
+	},
+	{
+		question: "Est-ce remboursé par la sécurité sociale ?",
+		reponse:
+			"L’hypnose thérapeutique n’est pas remboursée par la Sécurité sociale, mais certaines mutuelles proposent un remboursement partiel selon les forfaits bien-être. Renseignez-vous auprès de la vôtre.",
+	},
+];
 ---
-<section id="FAQ" class="FAQ">
-    <h3>Questions fréquentes</h3>
-    <ul>
-        <li> 
-            <h4>Est-ce que tout le monde est réceptif à l'hypnose ?</h4>
-            <p>Oui, tout le monde peut entrer en état d’hypnose. C’est un état naturel que nous expérimentons au quotidien (lorsqu'on est absorbé dans un livre ou "dans la lune"). La séance s’adapte à votre rythme et à votre sensibilité.</p>
-        </li>
-        <li>
-            <h4>Vais-je perdre le contrôle pendant la séance ?</h4>
-            <p> Non, l’hypnose thérapeutique n’a rien à voir avec l’hypnose de spectacle. Vous restez conscient(e) tout au long de la séance. C’est un travail collaboratif : je vous guide, mais vous êtes toujours libre.</p>
-        </li>
-        <li>
-            <h4>Combien de séances faut-il pour obtenir des résultats ?</h4>
-            <p> Cela dépend de la personne et de la problématique. Parfois une seule séance peut suffire, d’autres fois quelques séances sont nécessaires. Nous adaptons ensemble selon vos besoins.</p>
-        </li>
-        <li>
-            <h4>L'hypnose peut-elle aider contre l'anxiété ou les phobies ?</h4>
-            <p>Absolument. L’hypnose permet d’apaiser l’anxiété, de gérer les crises de stress, ou de désactiver des peurs irrationnelles comme les phobies (avion, araignées, etc.).</p>
-        </li>
-        <li>
-            <h4>Est-ce remboursé par la sécurité sociale ?</h4>
-            <p> L’hypnose thérapeutique n’est pas remboursée par la Sécurité sociale, mais certaines mutuelles proposent un remboursement partiel selon les forfaits bien-être. Renseignez-vous auprès de la vôtre.</p>
-        </li>
-    </ul>
+
+<section id="FAQ" class="FAQ section section--sand">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <h2>Questions fréquentes</h2>
+      <Lotus />
+    </div>
+    <div class="questions">
+      {questions.map(({ question, reponse }, i) => (
+        <details data-reveal style={`--i: ${i}`}>
+          <summary>
+            <h3>{question}</h3>
+            <span class="chevron" aria-hidden="true"></span>
+          </summary>
+          <p>{reponse}</p>
+        </details>
+      ))}
+    </div>
+  </div>
 </section>
 
 <style>
+  .section-head {
+    color: var(--color-dark-blue);
+  }
 
-    .FAQ {
-        scroll-margin-top: 100px;
-        padding-bottom: 1.5rem;
-    }
-    .FAQ h3 {
-        font-weight: bold;
-        color: var(--color-light-blue);
-        text-align: center;
-        margin: 2rem;
-    }
+  .questions {
+    max-width: 46rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.75rem;
+  }
 
-    .FAQ ul {
-        width: 80%;
-        list-style: none;
-        padding-left: 32px;
-    }
-    
-    .FAQ li {
-        position: relative;
-        color: var(--color-dark-blue);
-        padding-left: 2rem;
-        margin-bottom: 1.5rem;
-    }
+  details {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+  }
 
-    .FAQ li::before {
-        content: "";
-        position: absolute;
-        left: -0.8rem;
-        width: 1.5rem;
-        height: 1.5rem;
-        background: url("/lotus-list-style.svg");
-        background-size: contain;
-    }
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
 
-    .FAQ li h4 {
-        color: var(--color-dark-blue);
-        font-size: 1.3;
-        margin-bottom: 0.5rem;
-    }
+  summary::-webkit-details-marker {
+    display: none;
+  }
 
-    .FAQ li p {
-        color: var(--color-brown);
-        font-size: smaller;
-        font-style: italic;
-    }
+  summary h3 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
 
-    @media (min-width: 1024px) {
-        .FAQ {
-            scroll-margin-top: 200px ;
-        }
+  .chevron {
+    flex-shrink: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0 0.25rem 0.25rem;
+    border-right: 2px solid var(--color-dark-blue);
+    border-bottom: 2px solid var(--color-dark-blue);
+    transform: rotate(45deg);
+    transition: transform 0.5s var(--ease-calm);
+  }
+
+  details[open] .chevron {
+    transform: translateY(0.25rem) rotate(-135deg);
+  }
+
+  details p {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    details[open] p {
+      animation: unfold 0.7s var(--ease-calm);
     }
-    
+  }
+
+  @keyframes unfold {
+    from {
+      opacity: 0;
+      transform: translateY(-0.4rem);
+    }
+  }
 </style>

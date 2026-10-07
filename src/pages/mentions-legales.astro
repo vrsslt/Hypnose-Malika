@@ -2,14 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout title="Mentions légales" description="Mentions légales du site Chemin Hypnose : éditeur, hébergement et propriété intellectuelle.">
 
-<section id="mentions" class="mentions">
-  <h3>Mentions légales</h3>
+<section class="section legal">
+  <h1>Mentions légales</h1>
 
-  <div class="mentions-content">
-    <section class="mentions-block">
-      <h4>Éditeur du site</h4>
+  <div>
+    <section>
+      <h2>Éditeur du site</h2>
       <p>
         <strong>Malika Amari</strong><br>
         Praticienne en hypnose quantique spirituelle et énergétique<br>
@@ -20,15 +20,15 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </section>
 
-    <section class="mentions-block">
-      <h4>Directrice de la publication</h4>
+    <section>
+      <h2>Directrice de la publication</h2>
       <p>
         Madame <strong>Malika Amari</strong>
       </p>
     </section>
 
-    <section class="mentions-block">
-      <h4>Hébergement</h4>
+    <section>
+      <h2>Hébergement</h2>
       <p>
         Ce site est hébergé par :<br>
         <strong>Vercel Inc.</strong><br>
@@ -37,16 +37,16 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </section>
 
-    <section class="mentions-block">
-      <h4>Propriété intellectuelle</h4>
+    <section>
+      <h2>Propriété intellectuelle</h2>
       <p>
         L’ensemble du contenu de ce site (textes, images, illustrations, logos, etc.) est protégé par le droit de la propriété intellectuelle. 
         Toute reproduction, distribution, modification ou adaptation, même partielle, est strictement interdite sans autorisation préalable.
       </p>
     </section>
 
-    <section class="mentions-block">
-      <h4>Responsabilité</h4>
+    <section>
+      <h2>Responsabilité</h2>
       <p>
         Les informations fournies sur ce site le sont à titre indicatif. 
         Malika Amari s’efforce d’assurer leur exactitude mais ne saurait être tenue responsable des éventuelles erreurs ou omissions. 
@@ -59,57 +59,5 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
 </section>
-
-<style>
-  .mentions {
-    scroll-margin-top: 100px;
-    padding: 2rem 1rem;
-    background: var(--color-white);
-    color: var(--color-brown);
-  }
-
-  .mentions h3 {
-    text-align: center;
-    color: var(--color-light-blue);
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-  }
-
-  .mentions-content {
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
-  .mentions-block {
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 10px;
-  }
-
-  .mentions-block h4 {
-    margin: 0 0 0.5rem 0;
-    color: var(--color-dark-blue);
-    font-size: 1rem;
-  }
-
-  .mentions-block p {
-    margin: 0 0 0.5rem 0;
-    font-size: 0.95rem;
-    color: var(--color-brown);
-  }
-
-  .mentions a {
-    color: var(--color-dark-blue);
-    text-decoration: underline;
-  }
-
-  .mentions .note {
-    margin-top: 1.5rem;
-    text-align: center;
-    color: var(--color-dark-blue);
-    font-size: 0.9rem;
-  }
-</style>
 
 </Layout>

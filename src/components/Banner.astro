@@ -1,119 +1,166 @@
 ---
+import { Image } from "astro:assets";
+import banner from "../assets/banner.webp";
 ---
 
 <section class="banner">
-    <h2>
-        Retrouvez votre <br/>équilibre
-    </h2>
-    <button id="scroll-contact">
-        <span>Prendre rendez-vous</span>
-    </button>
+  <Image
+    class="banner-img"
+    src={banner}
+    alt=""
+    widths={[640, 1024, 1600, 2400]}
+    sizes="100vw"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="banner-content">
+    <p class="eyebrow">Hypnose quantique, spirituelle et énergétique</p>
+    <h1>Retrouvez votre <br/>équilibre</h1>
+    <a class="cta" href="/#contact">Prendre rendez-vous</a>
+  </div>
 </section>
 
 <style>
-    .banner {
-        scroll-margin-top: 100px; 
-        background-image: url('/banner.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        color: var(--color-white);
-        text-align: center;
-        position: relative;
+  .banner {
+    position: relative;
+    height: clamp(340px, 68vh, 620px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-dark-blue);
+  }
+
+  .banner-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 66% 40%;
+  }
+
+  /* voile pour la lisibilité du texte */
+  .banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(46, 59, 89, 0.78) 0%,
+      rgba(46, 59, 89, 0.5) 50%,
+      rgba(46, 59, 89, 0) 85%
+    );
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    color: var(--color-white);
+  }
+
+  .eyebrow {
+    max-width: 16rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .banner h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3rem, 2rem + 5vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    color: var(--color-white);
+    text-shadow: 0 2px 20px rgba(46, 59, 89, 0.35);
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 1.75rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 999px;
+    background-color: var(--color-sand);
+    color: var(--color-night);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.4s, transform 0.4s var(--ease-calm);
+  }
+
+  .cta:hover {
+    background-color: var(--color-white);
+    transform: translateY(-2px);
+  }
+
+  .cta:focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  @media (min-width: 768px) {
+    .banner-img {
+      object-position: 82% 30%;
     }
 
-    .banner h2 {
-        font-weight: bold;
-        font-size: 2rem;
-        position:absolute;
-        top: 15%;
-        left: 15%;
+    .eyebrow {
+      max-width: none;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* lente dérive de l'image, comme une respiration */
+    .banner-img {
+      animation: drift 28s ease-in-out infinite alternate;
     }
 
-    .banner button {
-        border: none;
-        background: none;
-        margin: 1rem;
-        background-color: rgba(232, 217, 182, 0.5);
-        border-radius: 1rem;
-        padding: 0.75rem;
-        position: absolute;
-        bottom: 10%;
-        left: 9.5%;
-        cursor: pointer;
-        font-family: "Handlee", cursive;
-        font-weight: bold;
+    .eyebrow,
+    .banner h1,
+    .cta {
+      animation: rise 1.4s var(--ease-calm) both;
     }
 
-    .banner button span {
-        color: var(--color-sand);
+    .banner h1 {
+      animation-delay: 0.25s;
     }
 
-    @media (min-width: 1024px) {
-
-        .banner {
-            height: 500px;
-            scroll-margin-top: 200px;
-            margin-top: 100px;
-            background-size: 100%;
-            background-position: center 30%;
-
-        }
-
-        .banner h2 {
-            font-size: 3.5rem;
-            top: 20%;
-            left: 22.5%;
-        }
-
-        .banner button {
-            width: 250px;
-            height: 50px;
-            left: 20%;
-            bottom: 20%;
-        }
-
-        .banner button span {
-            font-size: 1rem ;
-        }
+    /* halo qui pulse au rythme d'une respiration lente */
+    .cta {
+      animation:
+        rise 1.4s var(--ease-calm) 0.5s both,
+        breathe 6s ease-in-out 2s infinite;
     }
+  }
+
+  @keyframes drift {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+  }
+
+  @keyframes breathe {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(232, 217, 182, 0.45);
+    }
+    50% {
+      box-shadow: 0 0 0 14px rgba(232, 217, 182, 0);
+    }
+  }
 </style>
-
-<script>
-    // Gestion des liens internes (smooth scroll + redirection si autre page)
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const targetId = link.getAttribute('href'); // ex: "#contact"
-        if (!targetId || targetId === "#") return;
-  
-        e.preventDefault();
-  
-        if (window.location.pathname !== "/") {
-          // Si on n’est pas sur la home → on redirige
-          window.location.href = `/${targetId}`;
-        } else {
-          // Si on est sur la home → scroll smooth
-          const target = document.querySelector(targetId);
-          target?.scrollIntoView({ behavior: "smooth" });
-        }
-      });
-    });
-  
-    // Gestion spécifique du bouton de la bannière
-    const scrollBtn = document.getElementById('scroll-contact');
-    scrollBtn?.addEventListener('click', () => {
-      const targetId = "#contact";
-      if (window.location.pathname !== "/") {
-        window.location.href = `/${targetId}`;
-      } else {
-        const target = document.querySelector(targetId);
-        target?.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  </script>
-  

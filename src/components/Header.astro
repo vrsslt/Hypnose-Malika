@@ -1,290 +1,263 @@
 <header>
-    <div class="header-inner">
-        <a href="/">
-            <img src="/lotus-icon.webp" alt="lotus sur l'eau">
-        </a>
-    <h1>
-        Hypnose Malika
-    </h1>
-    <button id="burger" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Hypnose Malika, retour à l'accueil">
+      <img src="/lotus-icon.webp" alt="" width="120" height="180">
+      <span>Hypnose Malika</span>
+    </a>
+    <button id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    <nav id="nav-menu" class="nav-menu">
-        <ul>
-            <li><a href="/#about">Mon chemin de vie</a></li>
-            <li><a href="/#intervention">Mes domaines d'intervention</a></li>
-            <li><a href="/#seance">Déroulement d'une séance</a></li>
-            <li><a href="/#contact">Prendre RDV</a></li>
-            <li><a href="/#FAQ">Foire aux questions</a></li>
-        </ul>
+    <nav id="nav-menu" class="nav-menu" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/#about">Mon chemin de vie</a></li>
+        <li><a href="/#intervention">Mes domaines d'intervention</a></li>
+        <li><a href="/#seance">Déroulement d'une séance</a></li>
+        <li><a href="/#FAQ">Foire aux questions</a></li>
+        <li><a class="nav-cta" href="/#contact">Prendre RDV</a></li>
+      </ul>
     </nav>
-    </div>
-  </header>
+  </div>
+  <div id="nav-backdrop" class="nav-backdrop"></div>
+</header>
 
-  <style>
-    
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background-color: var(--color-dark-blue);
-        color: var(--color-white);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .header-inner {
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
-    }
-
-    header img {
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
-    }
-
-    header h1 {
-        font-size: 1.75rem;
-        flex-shrink: 0;
-    }
-
-    /* hamburger menu */
-
-    .nav-menu {
-        position: fixed;
-        top: 100px;
-        right: -100%;
-        width: 50%;
-        height: calc(100vh - 100px);
-        background-color: var(--color-dark-blue);
-        border-left: 4px solid var(--color-sand);
-        box-shadow: -4px 0 20px rgba(0,0,0,0.3);
-        border-radius: 0 0 0 12px;
-        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-        z-index: 999;
-    }
-
-    .nav-menu.open {
-        right: 0;
-    }
-
-    .nav-menu ul {
-        list-style: none;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .nav-menu li {
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-
-    .nav-menu a {
-        color: var(--color-white);
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2rem;
-        transition: color 0.3s, transform 0.3s;
-    }
-
-    .nav-menu a:hover {
-        color: var(--color-sand);
-        transform: translateX(5px);
-    }
-
-    #burger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 24px;
-        height: 18px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    #burger span {
-        display: block;
-        height: 3px;
-        width: 100%;
-        background-color: var(--color-white);
-        border-radius: 2px;
-    }
-
-    /* TABLETTE / DESKTOP */
-    header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--color-dark-blue);
-  z-index: 1000; /* s'assurer qu'il reste au-dessus */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px; /* mobile par défaut */
-  position: relative;
-}
-
-/* logo */
-header img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-/* titre */
-header h1 {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  text-align: center;
-}
-
-/* burger menu mobile */
-#burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-#burger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: var(--color-white);
-  border-radius: 2px;
-}
-
-/* nav mobile */
-.nav-menu {
-  position: fixed;
-  top: 100px;
-  right: -100%;
-  width: 50%;
-  height: calc(100vh - 100px);
-  background-color: var(--color-dark-blue);
-  transition: right 0.4s ease;
-  z-index: 999;
-}
-
-.nav-menu.open {
-  right: 0;
-}
-
-.nav-menu ul {
-  list-style: none;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* --- Desktop --- */
-@media (min-width: 1024px) {
-
-    header {
-        height: 200px;
-    }
-  .header-inner {
-    flex-direction: column;
-    align-items: center;
-    height: 160px;
-  }
-
-  header img {
-    position: absolute; /* logo reste à gauche */
+<style>
+  header {
+    position: fixed;
+    top: 0;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: var(--header-h);
+    background-color: rgba(70, 89, 127, 0.92);
+    backdrop-filter: blur(10px);
+    color: var(--color-white);
+    box-shadow: 0 2px 16px rgba(46, 59, 89, 0.18);
+    z-index: 1000;
   }
 
-  header h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin-top: 0.5rem;
-  }
-
-  #burger {
-    display: none;
-  }
-
-  .nav-menu {
-    position: static; /* nav dans le flux */
-    width: auto;
-    height: auto;
+  .header-inner {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.25rem;
     display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-    box-shadow: none;
-    border-left: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
 
-  .nav-menu ul {
-    flex-direction: row;
-    gap: 2rem;
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-white);
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .brand img {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px rgba(255, 250, 239, 0.35);
+  }
+
+  /* burger */
+  #burger {
+    position: relative;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
     padding: 0;
   }
 
-  .nav-menu li {
-    margin: 0;
+  #burger span {
+    display: block;
+    height: 2px;
+    width: 24px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transition: transform 0.4s var(--ease-calm), opacity 0.3s;
+  }
+
+  #burger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  #burger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #burger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  #burger:focus-visible,
+  .brand:focus-visible,
+  .nav-menu a:focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  /* nav mobile */
+  .nav-menu {
+    position: fixed;
+    top: var(--header-h);
+    right: 0;
+    width: min(20rem, 85vw);
+    height: calc(100dvh - var(--header-h));
+    background-color: var(--color-dark-blue);
+    border-radius: 0 0 0 var(--radius);
+    box-shadow: -8px 12px 30px rgba(46, 59, 89, 0.3);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.5s var(--ease-calm), visibility 0s 0.5s;
+    overflow-y: auto;
+    z-index: 1;
+  }
+
+  .nav-menu.open {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.5s var(--ease-calm), visibility 0s;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .nav-menu a {
-    font-size: 1.1rem;
-    font-weight: 500;
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
     color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
   }
 
   .nav-menu a:hover {
-    color: var(--color-sand);
+    background-color: rgba(255, 250, 239, 0.12);
   }
-}
 
+  .nav-menu .nav-cta {
+    margin-top: 0.75rem;
+    text-align: center;
+    background-color: var(--color-sand);
+    color: var(--color-night);
+    font-weight: 600;
+  }
 
-  </style>
-  
+  .nav-menu .nav-cta:hover {
+    background-color: var(--color-white);
+  }
 
-  <script>
-    const burger = document.getElementById('burger')
-    const menu = document.getElementById('nav-menu');
+  .nav-backdrop {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    height: calc(100dvh - var(--header-h));
+    background-color: rgba(46, 59, 89, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+  }
 
-    burger?.addEventListener('click', ()=> {
-        menu?.classList.toggle('open');
-    })
+  .nav-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s, visibility 0s;
+  }
 
-    menu?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', ()=> {
-            menu.classList.remove('open');
-        })
-    })
-  </script>
+  /* --- Desktop --- */
+  @media (min-width: 1240px) {
+    #burger,
+    .nav-backdrop {
+      display: none;
+    }
+
+    .nav-menu {
+      position: static;
+      width: auto;
+      height: auto;
+      background: none;
+      box-shadow: none;
+      transform: none;
+      visibility: visible;
+      overflow: visible;
+    }
+
+    .nav-menu ul {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0;
+    }
+
+    .nav-menu a {
+      padding: 0.5rem 0.7rem;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .nav-menu .nav-cta {
+      margin: 0 0 0 0.5rem;
+      padding: 0.5rem 1.25rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-menu,
+    .nav-backdrop,
+    #burger span {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("nav-menu");
+  const backdrop = document.getElementById("nav-backdrop");
+
+  const setOpen = (open: boolean) => {
+    menu?.classList.toggle("open", open);
+    backdrop?.classList.toggle("open", open);
+    burger?.setAttribute("aria-expanded", String(open));
+  };
+
+  burger?.addEventListener("click", () => {
+    setOpen(burger.getAttribute("aria-expanded") !== "true");
+  });
+
+  backdrop?.addEventListener("click", () => setOpen(false));
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && burger?.getAttribute("aria-expanded") === "true") {
+      setOpen(false);
+      burger.focus();
+    }
+  });
+</script>

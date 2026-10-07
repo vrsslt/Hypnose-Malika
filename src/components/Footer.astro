@@ -1,25 +1,31 @@
 <footer>
     <p>&copy; {new Date().getFullYear()} Hypnose Malika</p>
-    <nav>
-      <a href="/mentions-légales">Mentions légales</a> | 
+    <nav aria-label="Informations légales">
+      <a href="/mentions-legales">Mentions légales</a> |
       <a href="/politique">Politique de confidentialité</a>
     </nav>
   </footer>
-  
+
   <style>
     footer {
       padding: 2rem 1rem;
       text-align: center;
       font-size: 0.875rem;
-      background-color: var(--color-dark-blue);
+      background-color: var(--color-night);
       color: var(--color-white);
     }
     nav {
       margin-top: 0.5rem;
     }
     a {
-      text-decoration: none;
       color: var(--color-white);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+    a:focus-visible {
+      outline-color: var(--color-white);
     }
   </style>
-  

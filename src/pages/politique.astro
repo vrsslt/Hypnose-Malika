@@ -2,25 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-<section id="politique" class="politique">
-  <h3>Politique de confidentialité</h3>
+<Layout title="Politique de confidentialité" description="Politique de confidentialité du site Chemin Hypnose : données collectées, finalités et droits.">
+<section class="section legal">
+  <h1>Politique de confidentialité</h1>
 
-  <div class="politique-content">
+  <div>
     <p class="lead">
       La présente politique a pour objectif d’informer les visiteurs du site <strong>chemin-hypnose.fr</strong> sur la collecte et l’utilisation de leurs données personnelles.
     </p>
 
-    <section class="politique-block">
-      <h4>1 — Responsable du traitement</h4>
+    <section>
+      <h2>1 — Responsable du traitement</h2>
       <p>
         Les données recueillies via ce site sont traitées par <strong>Malika Amari</strong> — praticienne en hypnose Quantique Spirituelle et Énergétique.
         Pour toute question relative aux données : <a href="mailto:ma.amari@hotmail.fr">ma.amari@hotmail.fr</a>.
       </p>
     </section>
 
-    <section class="politique-block">
-      <h4>2 — Données collectées</h4>
+    <section>
+      <h2>2 — Données collectées</h2>
       <p>
         Lors de l’envoi d’un message via le formulaire de contact, les données suivantes peuvent être collectées :
       </p>
@@ -32,30 +32,30 @@ import Layout from "../layouts/Layout.astro";
       <p>Aucune autre donnée personnelle n’est collectée automatiquement par ce site.</p>
     </section>
 
-    <section class="politique-block">
-      <h4>3 — Finalité du traitement</h4>
+    <section>
+      <h2>3 — Finalité du traitement</h2>
       <p>
         Les données sont utilisées uniquement pour répondre à votre demande de contact et organiser un éventuel rendez-vous. Elles ne sont pas utilisées à des fins commerciales ni cédées à des tiers.
       </p>
     </section>
 
-    <section class="politique-block">
-      <h4>4 — Durée de conservation</h4>
+    <section>
+      <h2>4 — Durée de conservation</h2>
       <p>
         Les informations sont conservées <strong>pour une durée maximale de 3 ans</strong> à compter du dernier contact, sauf obligation légale contraire.
       </p>
     </section>
 
-    <section class="politique-block">
-      <h4>5 — Hébergement et sécurité</h4>
+    <section>
+      <h2>5 — Hébergement et sécurité</h2>
       <p>
         Le site est hébergé par <strong>Vercel Inc.</strong>. Les messages provenant du formulaire sont transmis via <strong>Formspree</strong> et réceptionnés sur la boîte e-mail de la praticienne (Gmail).  
         Les accès sont protégés par des mots de passe et des mécanismes standards de sécurité (HTTPS).
       </p>
     </section>
 
-    <section class="politique-block">
-      <h4>6 — Vos droits</h4>
+    <section>
+      <h2>6 — Vos droits</h2>
       <p>
         Conformément au RGPD et à la loi informatique et libertés, vous disposez des droits suivants :
       </p>
@@ -72,8 +72,8 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </section>
 
-    <section class="politique-block">
-      <h4>7 — Modification de la politique</h4>
+    <section>
+      <h2>7 — Modification de la politique</h2>
       <p>
         Cette politique peut être amenée à évoluer. La version en ligne est celle à jour — la date de dernière mise à jour est indiquée en bas de page.
       </p>
@@ -84,70 +84,5 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
 </section>
-
-<style>
-  .politique {
-    scroll-margin-top: 100px;
-    padding: 2rem 1rem;
-    background: var(--color-white);
-    color: var(--color-brown);
-  }
-
-  .politique h3 {
-    text-align: center;
-    color: var(--color-light-blue);
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-  }
-
-  .politique-content {
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
-  .politique .lead {
-    text-align: center;
-    color: var(--color-dark-blue);
-    margin-bottom: 1.25rem;
-    font-weight: 600;
-  }
-
-  .politique-block {
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 10px;
-  }
-
-  .politique-block h4 {
-    margin: 0 0 0.5rem 0;
-    color: var(--color-dark-blue);
-    font-size: 1rem;
-  }
-
-  .politique-block p,
-  .politique-block ul {
-    margin: 0 0 0.5rem 0;
-    color: var(--color-brown);
-    font-size: 0.95rem;
-  }
-
-  .politique-block ul {
-    padding-left: 1.1rem;
-  }
-
-  .politique a {
-    color: var(--color-dark-blue);
-    text-decoration: underline;
-  }
-
-  .politique .note {
-    margin-top: 1.5rem;
-    text-align: center;
-    color: var(--color-dark-blue);
-    font-size: 0.9rem;
-  }
-
-</style>
 
 </Layout>

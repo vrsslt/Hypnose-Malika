@@ -1,90 +1,95 @@
 ---
+import { Image } from "astro:assets";
+import meditation from "../assets/meditation.webp";
+import Lotus from "./Lotus.astro";
+
+const domaines = [
+	"Apaiser les blessures d’évènements passés encore présents",
+	"Rencontrer et réconforter son enfant intérieur",
+	"Entrer en dialogue avec une émotion, une douleur, un blocage ou une présence subtile",
+	"Recevoir un soin énergétique réharmonisant",
+	"Se relier à son guide, à sa conscience supérieure ou à un proche disparu",
+	"Éclairer sa mission de vie et trouver clarté dans ses choix",
+	"Se ressourcer dans des espaces intérieurs de lumière et de paix",
+	"Explorer les mémoires de vies antérieures",
+];
 ---
 
-<section id="intervention" class="intervention">
-    <h3>
-        Mes domaines d'intervention
-    </h3>
+<section id="intervention" class="intervention section section--sand">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <h2>Mes domaines d'intervention</h2>
+      <Lotus />
+    </div>
     <div class="content-container">
-    <img src="/meditation.webp" alt="illustration d'une femme méditant en pleine nature">
-    <ul>
-        <li>Apaiser les blessures d’évènements passés encore présents</li>
-        <li>Rencontrer et réconforter son enfant intérieur</li>
-        <li>Entrer en dialogue avec une émotion, une douleur, un blocage ou une présence subtile</li>
-        <li>Recevoir un soin énergétique réharmonisant</li>
-        <li>Se relier à son guide, à sa conscience supérieure ou à un proche disparu</li>
-        <li>Éclairer sa mission de vie et trouver clarté dans ses choix</li>
-        <li>Se ressourcer dans des espaces intérieurs de lumière et de paix</li>
-        <li>Explorer les mémoires de vies antérieures</li>
+      <Image
+        src={meditation}
+        alt="illustration d'une femme méditant en pleine nature"
+        widths={[400, 760]}
+        sizes="(min-width: 900px) 360px, 400px"
+        data-reveal
+      />
+      <ul>
+        {domaines.map((domaine, i) => (
+          <li data-reveal style={`--i: ${i}`}>
+            <Lotus size={22} />
+            <span>{domaine}</span>
+          </li>
+        ))}
       </ul>
-</div>
+    </div>
+  </div>
 </section>
 
 <style>
-    .intervention {
-        background-color: var(--color-white);
-        scroll-margin-top: 100px;
-        padding: 3rem 1rem;
-        padding-top: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 0;
-    }
-    .intervention h3 {
-        text-align: center;
-        color: var(--color-light-blue);
-        margin: 1rem;
-    }
+  .section-head {
+    color: var(--color-dark-blue);
+  }
 
-    .intervention img {
-        display: block;
-        margin: 1rem auto;
-        max-width: 400px;
-        border-radius: 1rem;
-        height: auto;
-        width: 100%;
-    }
+  .content-container {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
 
+  .intervention img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .intervention ul {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .intervention li {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.9rem 1.1rem;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    color: var(--color-dark-blue);
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  @media (min-width: 640px) {
     .intervention ul {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-       gap: 1rem;
-       margin: 1rem;
-       padding: 0;
+      grid-template-columns: 1fr 1fr;
     }
+  }
 
-    .intervention li {
-        background-color: var(--color-sand);
-        color: var(--color-dark-blue);
-        list-style: none;
-        text-align: center;
-        padding: 0.75rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .intervention li:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-    }
-
-
-@media (min-width: 1024px) {
-
-    .intervention {
-        scroll-margin-top: 200px;
-    }
+  @media (min-width: 900px) {
     .content-container {
-        display: flex;
+      grid-template-columns: 360px 1fr;
+      gap: 3rem;
     }
-
-    .intervention li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
+  }
 </style>
