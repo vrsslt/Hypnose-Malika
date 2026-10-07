@@ -1,11 +1,12 @@
 :root {
-	--color-white: #fffaef;
-	--color-sand: #e8d9b6;
-	--color-sand-light: #f5ecd6;
-	--color-brown: #5c5038;
-	--color-dark-blue: #46597f;
-	--color-night: #2e3b59;
-	--color-light-blue: #b6c6e8;
+	--color-white: #fbf7f0;
+	--color-bg-alt: #f1eadd;
+	--color-text: #3d3a35;
+	--color-text-soft: #6a645a;
+	--color-primary: #2f5868;
+	--color-primary-dark: #1f3e4b;
+	--color-mist: #a9c5cc;
+	--color-accent: #e0b070;
 
 	--font-body: "Quicksand Variable", system-ui, sans-serif;
 	--font-title: "Poiret One", "Quicksand Variable", sans-serif;
@@ -14,7 +15,7 @@
 
 	--header-h: 72px;
 	--radius: 1.25rem;
-	--shadow-soft: 0 10px 30px rgba(46, 59, 89, 0.08);
+	--shadow-soft: 0 10px 30px rgba(31, 62, 75, 0.08);
 	--ease-calm: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -36,7 +37,7 @@ body {
 	font-family: var(--font-body);
 	font-size: 1.0625rem;
 	line-height: 1.7;
-	color: var(--color-brown);
+	color: var(--color-text);
 	background-color: var(--color-white);
 	-webkit-font-smoothing: antialiased;
 }
@@ -52,7 +53,7 @@ h3 {
 	font-family: var(--font-title);
 	font-weight: 400;
 	line-height: 1.2;
-	color: var(--color-dark-blue);
+	color: var(--color-primary);
 }
 
 h2 {
@@ -66,11 +67,11 @@ h3 {
 }
 
 a {
-	color: var(--color-dark-blue);
+	color: var(--color-primary);
 }
 
 :focus-visible {
-	outline: 2px solid var(--color-dark-blue);
+	outline: 2px solid var(--color-primary);
 	outline-offset: 3px;
 	border-radius: 4px;
 }
@@ -85,7 +86,7 @@ main {
 }
 
 .section--sand {
-	background-color: var(--color-sand-light);
+	background-color: var(--color-bg-alt);
 }
 
 .container {
@@ -131,7 +132,7 @@ main {
 
 .legal .lead {
 	text-align: center;
-	color: var(--color-dark-blue);
+	color: var(--color-primary);
 	font-weight: 600;
 }
 
