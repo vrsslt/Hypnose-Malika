@@ -1,20 +1,30 @@
-<header>
+---
+import Lotus from "./Lotus.astro";
+
+// overlay : header transparent tant qu'on est en haut de la bannière
+const { overlay = false } = Astro.props;
+---
+
+<header id="site-header" class:list={[{ overlay }]}>
   <div class="header-inner">
     <a class="brand" href="/" aria-label="Hypnose Malika, retour à l'accueil">
-      <img src="/lotus-icon.webp" alt="" width="120" height="180">
+      <Lotus size={40} />
       <span>Hypnose Malika</span>
     </a>
-    <button id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header-actions">
+      <a class="header-cta" href="/#contact" aria-label="Prendre rendez-vous">RDV</a>
+      <button id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
     <nav id="nav-menu" class="nav-menu" aria-label="Navigation principale">
       <ul>
-        <li><a href="/#about">Mon chemin de vie</a></li>
-        <li><a href="/#intervention">Mes domaines d'intervention</a></li>
-        <li><a href="/#seance">Déroulement d'une séance</a></li>
-        <li><a href="/#FAQ">Foire aux questions</a></li>
+        <li><a href="/#about">Mon chemin</a></li>
+        <li><a href="/#intervention">Domaines</a></li>
+        <li><a href="/#seance">Séance</a></li>
+        <li><a href="/#FAQ">FAQ</a></li>
         <li><a class="nav-cta" href="/#contact">Prendre RDV</a></li>
       </ul>
     </nav>
@@ -34,6 +44,14 @@
     color: var(--color-white);
     box-shadow: 0 2px 16px rgba(31, 62, 75, 0.18);
     z-index: 1000;
+    transition: background-color 0.6s, box-shadow 0.6s;
+  }
+
+  /* en haut de la bannière : la photo passe sous le header */
+  :global(.js) header.overlay:not(.scrolled):not(.menu-open) {
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
   }
 
   .header-inner {
@@ -50,23 +68,50 @@
   .brand {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     color: var(--color-white);
     text-decoration: none;
     font-family: var(--font-title);
-    font-size: 1.5rem;
-    letter-spacing: 0.03em;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 7.5vw, 2rem);
+    letter-spacing: 0.06em;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
-  .brand img {
-    flex-shrink: 0;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 0 2px rgba(251, 247, 240, 0.35);
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* raccourci rendez-vous, une fois la bannière passée */
+  .header-cta {
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.5s, transform 0.5s var(--ease-calm), visibility 0s;
+  }
+
+  :global(.js) header:not(.past-hero) .header-cta {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.4rem);
+    transition: opacity 0.5s, transform 0.5s var(--ease-calm), visibility 0s 0.5s;
+  }
+
+  .header-cta:focus-visible {
+    outline-color: var(--color-white);
+  }
+
+  @media (max-width: 349px) {
+    .header-cta {
+      display: none;
+    }
   }
 
   /* burger */
@@ -188,8 +233,8 @@
   }
 
   /* --- Desktop --- */
-  @media (min-width: 1240px) {
-    #burger,
+  @media (min-width: 900px) {
+    .header-actions,
     .nav-backdrop {
       display: none;
     }
@@ -213,8 +258,8 @@
     }
 
     .nav-menu a {
-      padding: 0.5rem 0.7rem;
-      font-size: 0.95rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 1rem;
       white-space: nowrap;
     }
 
@@ -225,6 +270,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    header,
+    .header-cta,
     .nav-menu,
     .nav-backdrop,
     #burger span {
@@ -234,6 +281,8 @@
 </style>
 
 <script>
+  const header = document.getElementById("site-header");
+  const hero = document.querySelector<HTMLElement>(".banner");
   const burger = document.getElementById("burger");
   const menu = document.getElementById("nav-menu");
   const backdrop = document.getElementById("nav-backdrop");
@@ -242,7 +291,19 @@
     menu?.classList.toggle("open", open);
     backdrop?.classList.toggle("open", open);
     burger?.setAttribute("aria-expanded", String(open));
+    header?.classList.toggle("menu-open", open);
   };
+
+  const onScroll = () => {
+    if (!header) return;
+    const heroEnd = hero ? hero.offsetHeight - header.offsetHeight : 0;
+    header.classList.toggle("scrolled", window.scrollY > 16);
+    header.classList.toggle("past-hero", window.scrollY >= heroEnd);
+  };
+
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
 
   burger?.addEventListener("click", () => {
     setOpen(burger.getAttribute("aria-expanded") !== "true");

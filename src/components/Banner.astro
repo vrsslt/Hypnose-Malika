@@ -18,12 +18,16 @@ import banner from "../assets/banner.webp";
     <h1>Retrouvez votre <br/>équilibre</h1>
     <a class="cta" href="/#contact">Prendre rendez-vous</a>
   </div>
+  <a class="scroll-cue" href="#about" aria-label="Découvrir la suite">
+    <span></span>
+  </a>
 </section>
 
 <style>
   .banner {
     position: relative;
-    height: clamp(340px, 68vh, 620px);
+    min-height: 100svh;
+    padding: calc(var(--header-h) + 2rem) 0 4.5rem;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -44,12 +48,14 @@ import banner from "../assets/banner.webp";
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(31, 62, 75, 0.78) 0%,
-      rgba(31, 62, 75, 0.5) 50%,
-      rgba(31, 62, 75, 0) 85%
-    );
+    background:
+      linear-gradient(180deg, rgba(31, 62, 75, 0.55) 0, rgba(31, 62, 75, 0) 9rem),
+      linear-gradient(
+        90deg,
+        rgba(31, 62, 75, 0.78) 0%,
+        rgba(31, 62, 75, 0.5) 50%,
+        rgba(31, 62, 75, 0) 85%
+      );
   }
 
   .banner-content {
@@ -73,7 +79,7 @@ import banner from "../assets/banner.webp";
   }
 
   .banner h1 {
-    font-family: var(--font-display);
+    font-family: var(--font-title);
     font-weight: 700;
     font-size: clamp(3rem, 2rem + 5vw, 5.5rem);
     line-height: 1.05;
@@ -99,13 +105,38 @@ import banner from "../assets/banner.webp";
     transform: translateY(-2px);
   }
 
-  .cta:focus-visible {
+  .cta:focus-visible,
+  .scroll-cue:focus-visible {
     outline-color: var(--color-white);
+  }
+
+  /* invitation à défiler */
+  .scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .scroll-cue span {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-bottom: 0.4rem;
+    border-right: 2px solid var(--color-white);
+    border-bottom: 2px solid var(--color-white);
+    transform: rotate(45deg);
+    opacity: 0.85;
   }
 
   @media (min-width: 768px) {
     .banner-img {
-      object-position: 82% 30%;
+      object-position: 74% 30%;
     }
 
     .eyebrow {
@@ -130,6 +161,10 @@ import banner from "../assets/banner.webp";
       animation-delay: 0.25s;
     }
 
+    .scroll-cue {
+      animation: float 3.5s ease-in-out infinite;
+    }
+
     /* halo qui pulse au rythme d'une respiration lente */
     .cta {
       animation:
@@ -144,6 +179,12 @@ import banner from "../assets/banner.webp";
     }
     to {
       transform: scale(1.08);
+    }
+  }
+
+  @keyframes float {
+    50% {
+      transform: translateY(0.4rem);
     }
   }
 
